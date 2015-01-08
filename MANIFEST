@@ -1,0 +1,11 @@
+Build.PL
+Changes
+MANIFEST
+META.yml # Will be created by "make dist"
+Makefile.PL
+README
+lib/Text/Autoformat.pm
+t/00.load.t
+t/01.ignore.t
+config.emacs
+config.vim

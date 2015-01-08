@@ -1,0 +1,52 @@
+Text::Autoformat version 1.669006
+
+NAME
+    Text::Autoformat - Automatic and manual text wrapping and reformating
+
+DESCRIPTION
+
+    Text::Autoformat provides intelligent formatting of
+    plaintext without the need for any kind of embedded mark-up. The module
+    recognizes Internet quoting conventions, a wide range of bulleting and
+    number schemes, centred text, and block quotations, and reformats each
+    appropriately. Other options allow the user to adjust inter-word
+    and inter-paragraph spacing, justify text, and impose various
+    capitalization schemes. 
+
+    The module also supplies a re-entrant, highly configurable replacement
+    for the built-in Perl format() mechanism.
+
+AUTHOR
+    Damian Conway (damian@conway.org)
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+
+Alternatively, to install with Module::Build, you can use the following commands:
+
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
+
+
+
+DEPENDENCIES
+
+Requires the Text::Reform module
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 1997-2009, Damian Conway
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

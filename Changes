@@ -1,0 +1,207 @@
+Revision history for Text-Autoformat
+
+0.01  Mon Nov  3 14:05:02 1997
+    - original version; created by h2xs 1.18
+
+1.03    Thu Oct 26 10:14:20 2000
+
+    - Tweaked test.pl and POD
+
+    - required 5.005
+      (module uses funky stuff that's broken in earlier perls - sorry Dave)
+
+    - added break_TeX subroutine to take advantage of TeX::Hyphen
+      if it's installed.
+
+    - documented "sticky" config mode
+
+    - Changed semantics of footer generation slightly (see doc)
+
+    - fixed niggle in widow handling under full justification
+
+    - Added pagenum option to control page numbering
+
+    - Added three-part hash specification option for headers and footers
+      (thanks Chaim)
+
+        - Added separator handling to autoformat -- also fixes
+          underlining of heading (thanks very much Simon)
+
+
+1.04    Tue Dec  5 10:31:22 2000
+
+    - Limited numerical bullets to 3 digits.
+      This stops autoformat from misclassifying orphaned years such as
+      2001.
+
+    - Added new abbreviations
+
+    - Doc patch on numerical formatting (thanks Andy)
+
+    - Major bug fixes to renumbering mechanism
+
+    - Turned off renumbering in quoted text.
+
+    - Added correct autostringification of autostringifying objects
+      passed to &form. (Thanks Leon)
+
+    - Cleaned up "evil" exporting code left over from testing
+      (Thanks Rick)
+
+
+1.07    Wed Apr  2 04:45:05 2003
+
+    - Tweaked pod to remove invalid markup
+
+    - Fixed left justification of last line of fully justified text
+      (thanks Elias)
+
+    - Devolved &from and &tag to Text::Reform
+
+    - Fixed incorrect handling of stringifiable objects (thanks dLux)
+
+    - Fixed bugs on null input (now short-circuits)
+
+    - Fixed unwarranted trimming of trailing newlines (thanks Mark)
+
+    - Added C<renumber> option to control renumbering
+
+    - Preserved capitalization of abbreviations under case changes
+      (thanks Alex)
+
+    - Added "autocentre" flag to switch off auto-centring of paras
+
+    - Added "ignore" flag to control which paragraphs are reformatted
+      (thanks Tony)
+
+
+1.08    Wed Apr  2 22:30:05 2003
+
+    - Simplified test.pl
+
+
+1.10    Wed Apr  9 08:49:51 2003
+
+    - Fixed test.pl again!!!
+
+
+1.11    Wed May  7 09:44:26 2003
+
+    - Enhanced "highlight" casing mode (thanks Tom)
+
+    - Made hyphenation smarter (thanks Raj)
+
+
+1.12    Tue May 27 23:34:33 2003
+
+    - Now honours -- mail sig introducer
+      (stops formatting that that point)
+
+    - Now ignores mail headers
+
+    - Added exportable &ignore_headers for 
+      when using in user-defined "ignore" subs
+
+    - Now handles of embedded HTML entities 
+      (thanks David)
+
+    - Added call to C<use utf8> for 5.6 compatibility
+      (thanks Paolo)
+
+    - Restricted normal numbering to the range 0-999
+      to prevent false numbering caused by a year (like
+      1999) at the start of a line (like this)
+
+    - Fixed subtle bug with words starting with "ps-"
+      being treated as post scripts (thanks Rashid!)
+
+
+1.13    Wed May  4 22:44:20 2005
+
+    - Added sample config files for emacs and vim
+
+    - Extended allows "Name>" quoters to "Name_1>" (thanks Simon)
+
+    - Fixed weird behaviour of "(e.g. at start of line" (thanks Tim)
+
+    - Fixed handling of mail headers by adding "mail" option
+      (thanks Struan)
+
+    - Fixed bug in quoters (thanks Steve)
+
+    - Added a C<lists> option to turn off special treatment of apparent
+      lists (thanks Ingvar)
+
+
+
+1.14.0  Sun Sep 30 04:29:29 2007
+
+    - Fixed bug in handling empty mail messages
+
+    - Fixed bug in handling sig delimiters
+
+    - Fixed bug in paragraph ignoring code (thanks Rob)
+
+    - Fixed bug in handling whitespace-only input (thanks Ed)
+
+    - Fixed bug in Roman numerals (thanks Suresh)
+
+    - Fixed overeager autocentering (thanks Suresh)
+
+    - Enhanced 'lists' option to allow only specific types of lists
+      to be recognized (thanks Rob)
+
+    - Fixed bug in numbered hangs (thanks Rob)
+
+    - Fixed bug in Roman numeraled hangs (thanks Rob)
+
+    - Fixed misidentification of 8:20-style times as leading numbers (thanks
+      Rob)
+
+    - Fixed sentence mode (thanks Eric)
+
+    - Changed licence to "same terms as Perl itself" to improve Fedora
+      compatibility
+
+
+
+1.666.0  Fri Apr 17 08:00:36 2009
+         No changes logged
+
+
+1.668001  Sat Apr  3 15:38:55 2010
+
+    - Removed spurious debugging statement in bad Pod. (Thanks Chris)
+
+
+1.669001  Fri May 28 07:38:36 2010
+
+    - Added major improvements to the 'ignore' option (thanks Dan!)
+
+
+1.669002  Tue Jun 22 15:39:35 2010
+
+    - Patched missing case in 'ignore' option handling (thanks Alan)
+
+
+1.669003  Mon May 13 18:53:47 2013
+
+
+
+1.669004  Wed Jul 31 14:43:55 2013
+
+    - Tweaked widow handling to avoid a nasty edge case (thanks Michael!)
+
+
+1.669005  Fri Oct  3 16:56:12 2014
+
+    - Added Lisp-style leading ; as a quoter (thanks Roland)
+
+    - Added 'quoter' option to allow user to specify a regex
+      to be used to recognize quoters (thanks Peter)
+
+
+1.669006  Sat Oct  4 07:32:33 2014
+
+    - Improved 'quoter' option to allow augmenting quoter regex,
+      rather than just replacing it (thanks Peter)
