@@ -13,6 +13,11 @@ my $builder = Module::Build->new(
         'version'      => 0,
     },
     add_to_cleanup      => [ 'Text-Autoformat-*' ],
+    meta_merge => {
+        resources => {
+            repository => 'https://github.com/neilbowers/Text-Autoformat'
+        }
+    },
 );
 
 $builder->create_build_script();

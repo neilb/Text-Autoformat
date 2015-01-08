@@ -1491,6 +1491,10 @@ can change that default using the 'tabspace' option:
 
 The Text::Reform module
 
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/Text-Autoformat>
+
 =head1 AUTHOR
 
 Damian Conway (damian@conway.org)

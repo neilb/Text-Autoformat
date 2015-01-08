@@ -2,6 +2,12 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+my $mm_ver = $ExtUtils::MakeMaker::VERSION;
+if ($mm_ver =~ /_/) { # dev version
+    $mm_ver = eval $mm_ver;
+    die $@ if $@;
+}
+
 WriteMakefile(
     NAME                => 'Text::Autoformat',
     AUTHOR              => 'Damian Conway <DCONWAY@CPAN.org>',
@@ -15,4 +21,19 @@ WriteMakefile(
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Text-Autoformat-*' },
+
+    ($mm_ver <= 6.45
+        ? ()
+        : (META_MERGE => {
+            'meta-spec' => { version => 2 },
+            resources => {
+                repository  => {
+                    type => 'git',
+                    web  => 'https://github.com/neilbowers/Text-Autoformat',
+                    url  => 'git://github.com/neilbowers/Text-Autoformat.git',
+                },
+            },
+          })
+    ),
+
 );

@@ -4,6 +4,7 @@ Revision history for Perl module Text::Autoformat
     - Got co-maint from Damian so I could put the dist on github.
       Thanks Damian!
     - Reformatted this file as per CPAN::Changes::Spec
+    - Added github repo to metadata and doc
 
 1.669006 2014-10-03 DCONWAY
     - Improved 'quoter' option to allow augmenting quoter regex,
