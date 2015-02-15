@@ -4,7 +4,7 @@ use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 use Carp;
 use 5.005;
-our $VERSION = '1.68';
+our $VERSION = '1.69';
 
 require Exporter;
 
@@ -178,7 +178,7 @@ sub autoformat  # ($text, %args)
             $lines[-1]{presig} .= $lines[-1]{quoter}     = defn $2;
             $lines[-1]{presig} .= $lines[-1]{quotespace} = defn $3;
 
-            $lines[-1]{hang} = Hang->new($_, $args{lists});
+            $lines[-1]{hang} = Text::Autoformat::Hang->new($_, $args{lists});
 
             s/([ \t]*)(.*?)(\s*)$//
                 or die "Internal Error ($@) on '$_'";
@@ -653,7 +653,7 @@ sub blockquote {
     return 1;
 }
 
-package Hang;
+package Text::Autoformat::Hang;
 use strict;
 
 # ROMAN NUMERALS
@@ -692,7 +692,7 @@ my $hang        = qq{(?:(?i)(?:$hangNB|$hangword|$hangbullet)(?=[ \t]))};
 
 sub new { 
     my ($class, $orig, $lists_mode) = @_;
-    return NullHang->new() if !$lists_mode;
+    return Text::Autoformat::NullHang->new() if !$lists_mode;
 
     my $origlen = length $orig;
     my @vals;
@@ -745,7 +745,7 @@ sub new {
         }
     }
 
-    return NullHang->new if !@vals;
+    return Text::Autoformat::NullHang->new if !@vals;
     bless \@vals, $class;
 } 
 
@@ -855,7 +855,7 @@ sub length {
 
 sub empty { 0 }
 
-package NullHang;
+package Text::Autoformat::NullHang;
 use strict;
 
 sub new       { bless {}, $_[0] }
@@ -877,7 +877,7 @@ Text::Autoformat - Automatic text wrapping and reformatting
 
 =head1 VERSION
 
-This document describes version 1.68 of Text::Autoformat
+This document describes version 1.69 of Text::Autoformat
 
 =head1 SYNOPSIS
 

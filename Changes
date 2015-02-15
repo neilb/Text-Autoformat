@@ -1,5 +1,9 @@
 Revision history for Perl module Text::Autoformat
 
+1.69 2015-02-15 NEILB
+    - Changed the internal packages Hang and NullHang to
+      Text::Autoformat::Hang and Text::Autoformat::NullHang respectively.
+
 1.68 2015-02-15 NEILB
     - Was failing on input of an empty string RT#101994. Fix from DCONWAY.
       Apologies for the confusion caused by Damian and I both releasing,
