@@ -123,7 +123,6 @@ sub autoformat  # ($text, %args)
         $toSTDOUT = !defined wantarray();
     }
 
-    return unless length $text;
     return $text unless $text =~ /\S/;
 
     $args{right}   = $default_margin unless exists $args{right};

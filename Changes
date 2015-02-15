@@ -1,5 +1,10 @@
 Revision history for Perl module Text::Autoformat
 
+1.68 2015-02-15 NEILB
+    - Was failing on input of an empty string RT#101994. Fix from DCONWAY.
+      Apologies for the confusion caused by Damian and I both releasing,
+      this release should straighten things up.
+
 1.67 2015-01-08 NEILB
     - Got co-maint from Damian so I could put the dist on github.
       Thanks Damian!
