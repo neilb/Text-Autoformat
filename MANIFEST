@@ -7,5 +7,6 @@ README
 lib/Text/Autoformat.pm
 t/00.load.t
 t/01.ignore.t
+t/02.wide-numbers.t
 config.emacs
 config.vim
