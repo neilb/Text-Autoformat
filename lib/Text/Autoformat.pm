@@ -673,7 +673,7 @@ sub toRoman($$)
 
 # BITS OF A NUMERIC VALUE
 
-my $num = q/(?:\d{1,3}\b(?!:\d\d\b))/;     # Ignore 8:20 etc.
+my $num = q/(?:[0-9]{1,3}\b(?!:[0-9][0-9]\b))/;     # Ignore 8:20 etc.
 my $let = q/[A-Za-z]/;
 my $pbr = q/[[(<]/;
 my $sbr = q/])>/;
