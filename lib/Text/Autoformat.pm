@@ -507,8 +507,6 @@ sub _build_ignore {
     return $ignore;
 }
 
-use utf8;
-
 my $alpha = qr/[^\W\d_]/;
 my $notalpha = qr/[\W\d_]/;
 my $word = qr/\pL(?:\pL'?)*/;
