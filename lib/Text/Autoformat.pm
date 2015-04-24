@@ -520,7 +520,6 @@ sub recase {
 
     my $text = "";
     my @pieces = split /(&[a-z]+;)/i, $origtext;
-    use Data::Dumper 'Dumper';
     push @pieces, "" if @pieces % 2;
     return $text unless @pieces;
     local $_ = shift @pieces;
