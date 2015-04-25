@@ -507,8 +507,6 @@ sub _build_ignore {
     return $ignore;
 }
 
-use utf8;
-
 my $alpha = qr/[^\W\d_]/;
 my $notalpha = qr/[\W\d_]/;
 my $word = qr/\pL(?:\pL'?)*/;
@@ -522,7 +520,6 @@ sub recase {
 
     my $text = "";
     my @pieces = split /(&[a-z]+;)/i, $origtext;
-    use Data::Dumper 'Dumper';
     push @pieces, "" if @pieces % 2;
     return $text unless @pieces;
     local $_ = shift @pieces;
@@ -676,7 +673,7 @@ sub toRoman($$)
 
 # BITS OF A NUMERIC VALUE
 
-my $num = q/(?:\d{1,3}\b(?!:\d\d\b))/;     # Ignore 8:20 etc.
+my $num = q/(?:[0-9]{1,3}\b(?!:[0-9][0-9]\b))/;     # Ignore 8:20 etc.
 my $let = q/[A-Za-z]/;
 my $pbr = q/[[(<]/;
 my $sbr = q/])>/;
