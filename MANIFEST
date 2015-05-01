@@ -10,3 +10,4 @@ t/01.ignore.t
 t/02.wide-numbers.t
 config.emacs
 config.vim
+META.json

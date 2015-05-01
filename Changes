@@ -1,8 +1,12 @@
 Revision history for Perl module Text::Autoformat
 
-1.69_01 2015-04-25 NEILB
+1.70 2015-05-01 NEILB
     - Removed useless loading of utf8 and Data::Dumper. RJBS++
     - Only renumber ASCII-digit lists, don't touch other \d things. RJBS++
+
+1.69_01 2015-04-25 NEILB
+    - This was a developer release containing the changes subsequently
+      released in 1.70 (see above).
 
 1.69 2015-02-15 NEILB
     - Changed the internal packages Hang and NullHang to

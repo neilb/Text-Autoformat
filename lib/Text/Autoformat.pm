@@ -4,7 +4,7 @@ use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 use Carp;
 use 5.005;
-our $VERSION = '1.69_01';
+our $VERSION = '1.70';
 
 require Exporter;
 
@@ -874,7 +874,7 @@ Text::Autoformat - Automatic text wrapping and reformatting
 
 =head1 VERSION
 
-This document describes version 1.69 of Text::Autoformat
+This document describes version 1.70 of Text::Autoformat
 
 =head1 SYNOPSIS
 
