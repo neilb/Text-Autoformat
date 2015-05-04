@@ -1,5 +1,10 @@
 Revision history for Perl module Text::Autoformat
 
+1.71 2015-05-04 NEILB
+    - Previous release had a problem with PAUSE, caused by the two internal
+      packages not having a $VERSION. Identified and reported as PAUSE
+      issue GH#170 by KENTNL++. Added $VERSION to internal packages.
+
 1.70 2015-05-01 NEILB
     - Removed useless loading of utf8 and Data::Dumper. RJBS++
     - Only renumber ASCII-digit lists, don't touch other \d things. RJBS++
