@@ -647,7 +647,7 @@ Text::Autoformat - Automatic text wrapping and reformatting
 
 =head1 VERSION
 
-This document describes version 1.70 of Text::Autoformat
+This document describes version 1.72 of Text::Autoformat
 
 =head1 SYNOPSIS
 

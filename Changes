@@ -1,9 +1,13 @@
 Revision history for Perl module Text::Autoformat
 
-1.71_01 2015-06-06 NEILB
+1.72 2015-06-14 NEILB
     - Switched to Dist::Zilla, dropping both Build.PL and Makefile.PL -- phew!
     - Refactored the two cuckoo packages into separate modules,
       Text::Autoformat::Hang and Text::Autoformat::NullHang.
+
+1.71_01 2015-06-06 NEILB
+    - The changes released in 1.72 (above) were first done in a
+      developer release.
 
 1.71 2015-05-04 NEILB
     - Previous release had a problem with PAUSE, caused by the two internal
