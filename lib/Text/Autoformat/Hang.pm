@@ -67,7 +67,7 @@ sub new {
         @vals = ();
     }
     else {
-        local $^W;
+        no warnings "all";
         my $cut;
         while (length $_[1]) {
             last if $_[1] =~ m#\A($ows)($abbrev)#
@@ -111,7 +111,7 @@ sub new {
 } 
 
 sub incr {
-    local $^W;
+    no warnings "all";
     my ($self, $prev, $prevsig) = @_;
     my $level;
     # check compatibility
@@ -152,7 +152,7 @@ sub incr {
 }
 
 sub _incr {
-    local $^W;
+    no warnings "all";
     if ($_[0]{type} eq 'rom') {
         $_[0]{val} = toRoman(++$_[0]{nval},$_[0]{val});
     }
@@ -162,7 +162,7 @@ sub _incr {
 }
 
 sub _reset {
-    local $^W;
+    no warnings "all";
     if ($_[0]{type} eq 'rom') {
         $_[0]{val} = toRoman($_[0]{nval}=1,$_[0]{val});
     }
@@ -178,7 +178,7 @@ sub stringify {
     my ($self) = @_;
     my ($str, $level) = ("");
     for $level (@$self) {
-        local $^W;
+        no warnings "all";
         $str .= join "", @{$level}{'pre','val','post'};
     }
     return $str;
@@ -198,7 +198,7 @@ sub field {
 }
 
 sub signature {
-    local $^W;
+    no warnings "all";
     my ($self) = @_;
     my ($str, $level) = ("");
     for $level (@$self) {
