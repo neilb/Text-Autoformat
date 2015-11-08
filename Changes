@@ -1,5 +1,9 @@
 Revision history for Perl module Text::Autoformat
 
+1.74 2015-11-?? NEILB
+    - Made the mention of Text::Reform in SEE ALSO be a link.
+      Thanks to MANWAR for the PR doing this.
+
 1.73 2015-11-08 NEILB
     - Fixed warnings about uninitialized values in Hang.pm GH#4.
       Thanks to Jeremy Mates for the PR.
