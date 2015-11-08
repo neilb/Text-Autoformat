@@ -1258,7 +1258,7 @@ can change that default using the 'tabspace' option:
 
 =head1 SEE ALSO
 
-The Text::Reform module
+The L<Text::Reform> module
 
 =head1 REPOSITORY
 
