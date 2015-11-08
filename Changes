@@ -3,6 +3,7 @@ Revision history for Perl module Text::Autoformat
 1.73 2015-11-08 NEILB
     - Fixed warnings about uninitialized values in Hang.pm GH#4.
       Thanks to Jeremy Mates for the PR.
+    - Changed github repo URL after changing my github username
 
 1.72 2015-06-14 NEILB
     - Switched to Dist::Zilla, dropping both Build.PL and Makefile.PL -- phew!

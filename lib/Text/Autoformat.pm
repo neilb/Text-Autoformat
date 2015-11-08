@@ -1262,7 +1262,7 @@ The Text::Reform module
 
 =head1 REPOSITORY
 
-L<https://github.com/neilbowers/Text-Autoformat>
+L<https://github.com/neilb/Text-Autoformat>
 
 =head1 AUTHOR
 
