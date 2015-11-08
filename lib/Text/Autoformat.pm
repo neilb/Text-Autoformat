@@ -1258,7 +1258,16 @@ can change that default using the 'tabspace' option:
 
 =head1 SEE ALSO
 
-The L<Text::Reform> module
+L<Text::Reform> - provides functions for manual text wrapping and reformatting.
+
+L<Text::Aligner> - provides a single function for justifying strings
+according to various styles.
+
+L<Text::Format> - a class that provides methods for formatting
+text in various ways.
+
+L<Data::Formatter::Text> - format various Perl data structures as text,
+in different ways according to the type of data.
 
 =head1 REPOSITORY
 
