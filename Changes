@@ -1,6 +1,8 @@
 Revision history for Perl module Text::Autoformat
 
-1.74 2015-11-?? NEILB
+1.74 2015-11-28 NEILB
+    - On Perl 5.22+ you could get "Negative repeat count does nothing"
+      warnings. Thanks to SREZIC for RT#109838.
     - Made the mention of Text::Reform in SEE ALSO be a link.
       Thanks to MANWAR for the PR doing this.
     - Added some more entries to SEE ALSO.

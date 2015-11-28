@@ -264,7 +264,8 @@ sub autoformat  # ($text, %args)
             }
             else
             {
-    my $extraspace = length($line->{raw}) - length($line->{text}) - $firstfrom;
+                my $extraspace = length($line->{raw}) - length($line->{text}) - $firstfrom;
+                $extraspace = 0 if $extraspace < 0;
                 $paras[-1]->{text} .= "\n" . q{ }x$extraspace . $line->{text};
                 $paras[-1]->{raw} .= "\n" . $line->{raw};
             }
@@ -419,12 +420,12 @@ sub autoformat  # ($text, %args)
     for my $para ( @paras )
     {
         if ($para->{empty}) {
-        $gap += 1 + ($para->{text} =~ tr/\n/\n/);
+            $gap += 1 + ($para->{text} =~ tr/\n/\n/);
         }
         if ($para->{ignore}) {
-            $text .= (!$para->{empty} ? "\n"x($args{gap}-$gap) : "") ;
-        $text .= $para->{raw};
-        $text .= "\n" unless $para->{raw} =~ /\n\z/;
+            $text .= (!$para->{empty} ? "\n"x($args{gap}-$gap > 0 ? ($args{gap}-$gap) : 0) : "") ;
+            $text .= $para->{raw};
+            $text .= "\n" unless $para->{raw} =~ /\n\z/;
         }
         else {
             my $leftmargin = $args{left} ? " "x($args{left}-1)
@@ -455,7 +456,7 @@ sub autoformat  # ($text, %args)
                      :                                     '['x$tlen
                          );
             my $tryformat = "$format$tfield";
-            $newtext = (!$para->{empty} ? "\n"x($args{gap}-$gap) : "") 
+            $newtext = (!$para->{empty} ? "\n"x($args{gap} > $gap ? ($args{gap}-$gap) : 0) : "") 
                      . form( { squeeze=>$args{squeeze}, trim=>1,
                        break=>$args{break},
                        fill => !(!($args{expfill}
