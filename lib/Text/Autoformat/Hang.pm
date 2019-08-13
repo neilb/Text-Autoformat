@@ -85,7 +85,7 @@ sub new {
                 : ($lists_mode =~ /1|alpha/i && $_[1] =~ s#\A($let(?!$let))##i)
                         ? { type=>'let', val=>$1 }
                 :         { val => "", type => "" };
-            $_[1] = $pre.$_[1] and last unless $val->{val};
+            $_[1] = $pre.$_[1] and last unless length $val->{val};
             $val->{post} = $pre && $_[1] =~ s#\A($ows()[.:/]?[$close{$pre}][.:/]?)## && $1
                              || $_[1] =~ s#\A($ows()[$sbr.:/])## && $1
                              || "";
