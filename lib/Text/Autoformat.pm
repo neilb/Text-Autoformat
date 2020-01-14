@@ -1009,14 +1009,14 @@ format lines such as:
 
 specify:
 
-    autoformat($text, { quoter =E<gt> qr{//} })
+    autoformat($text, { quoter => qr{//} })
 
 Instead of completely replacing the existing set of quoters, you can
 I<extend> them by specifying a pattern that includes the metasequence
 C<< <QUOTER> >>, which is then replaced by the module's standard pattern
 for quoters. So, for example, to add C<//> to the set of existing quoters:
 
-    autoformat($text, { quoter =E<gt> qr{//|<QUOTER>} })
+    autoformat($text, { quoter => qr{//|<QUOTER>} })
 
 
 Block quotations present a different challenge. A typical formatter
