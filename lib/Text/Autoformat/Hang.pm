@@ -4,6 +4,8 @@ use 5.006;
 use strict;
 use warnings;
 
+use utf8;
+
 # ROMAN NUMERALS
 
 sub inv($@) { my ($k, %inv)=shift; for(0..$#_) {$inv{$_[$_]}=$_*$k} %inv }
@@ -46,8 +48,8 @@ my %close = ( '[' => ']', '(' => ')', '<' => '>', "" => '' );
 my $hangPS      = qq{(?i:ps:|(?:p\\.?)+s\\b\\.?(?:[ \\t]*:)?)};
 my $hangNB      = qq{(?i:n\\.?b\\.?(?:[ \\t]*:)?)};
 my $hangword    = qq{(?:(?:Note)[ \\t]*:)};
-my $hangbullet  = qq{[*.+-]};
-my $hang        = qq{(?:(?i)(?:$hangNB|$hangword|$hangbullet)(?=[ \t]))};
+my $hangbullet  = qq{[•*.+-]};
+my $hang        = qq{(?:(?i)(?:$hangNB|$hangword|$hangbullet)(?=[ \x{A0}\t]))};
 
 # IMPLEMENTATION
 

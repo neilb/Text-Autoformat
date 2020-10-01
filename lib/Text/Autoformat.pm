@@ -181,7 +181,7 @@ sub autoformat  # ($text, %args)
 
             $lines[-1]{hang} = Text::Autoformat::Hang->new($_, $args{lists});
 
-            s/([ \t]*)(.*?)(\s*)$//
+            s/([ \x{A0}\t]*)(.*?)(\s*)$//
                 or die "Internal Error ($@) on '$_'";
             $lines[-1]{hangspace} = defn $1;
             $lines[-1]{text} = defn $2;
